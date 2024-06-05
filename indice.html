@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tres en raya</title>
+    <link rel="stylesheet" href="estilos.css"> <!-- Enlace al archivo CSS -->
+</head>
+<body>  
+    <div class="juego">    <!-- Contenedor principal del juego -->
+        <article class="mensaje">   <!-- Mensaje de turno -->
+            <h2>Es el turno de... 
+                <span class="turno"></span>
+            </h2>
+        </article>
+        <section class="tablero"></section>      <!-- Tablero de juego -->     
+    </div>
+    <section class="fin-de-juego">         <!-- Pantalla de fin de juego -->
+        <div class="mostrar">
+            <h1 class="resultado">¡Juego terminado!</h1>
+            <p>¿Quieres volver a jugar?</p>
+            <button class="boton">Reiniciar el juego</button>
+        </div>
+    </section>
+    <script src="javascript.js"></script> <!-- Enlace al archivo JavaScript -->
+</body>
+</html>

@@ -1,0 +1,106 @@
+*, ::before, ::after 
+{
+    margin: 0;
+    box-sizing: border-box;
+}
+body 
+{
+    background-color: #3498db; /* Color de fondo del cuerpo */
+    font-family: Arial, Helvetica, sans-serif;
+    color: white; /* Color del texto */
+}
+/* Estilos del tablero de juego */
+.juego 
+{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    gap: 1rem;
+    place-content: center;
+}
+.tablero 
+{
+    background-color: black;
+    width: 300px;
+    height: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 columnas iguales */
+    grid-template-rows: 1fr 1fr 1fr; /* 3 filas iguales */
+}
+.celda 
+{
+    width: 100%;
+    height: 100%;
+    border: 2px solid #FFFFFF; /* Borde de las celdas */
+    display: grid;
+    place-items: center;
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    grid-template-areas: "draw";
+}
+/* Estilos de X y O */
+.circulo::after 
+{
+    content: "";
+    grid-area: draw;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Forma circular */
+    border: 10px solid #FFF; /* Borde blanco */
+}
+.cruz::after
+{
+    content: "";
+    grid-area: draw;
+    display: block;
+    width: 10px;
+    height: 70px;
+    transform: rotate(45deg); /* Rotar la cruz */
+    border-radius: 10px;
+    border: 10px solid #FFF; /* Borde blanco */
+}
+.cruz::before 
+{
+    content: "";
+    grid-area: draw;
+    display: block;
+    width: 10px;
+    height: 70px;
+    transform: rotate(-45deg); /* Rotar la cruz */
+    border-radius: 10px;
+    border: 10px solid #FFF; /* Borde blanco */
+}
+/* Estilos para fin de juego */
+.fin-de-juego 
+{
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro con opacidad */
+    position: fixed;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s; /* Transición suave de opacidad */
+    display: grid;
+    place-content: center;
+}
+.fin-de-juego__mostrar 
+{
+    display: grid;
+    gap: 1rem;
+    text-align: center;
+}
+.boton 
+{
+    background-color: #2ecc71; /* Color de fondo del botón */
+    font-weight: bold;
+    color: white; /* Color del texto */
+    padding: 1rem 2rem;
+    margin: 0 auto;
+    width: max-content;
+    border: none;
+    border-radius: 100px; /* Bordes redondeados */
+}
+.mostrar 
+{
+    opacity: 1;
+    pointer-events: unset; /* Interacción con la pantalla de fin de juego */
+}
